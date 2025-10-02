@@ -35,3 +35,28 @@ src/grammar.json
 # OS files
 .DS_Store
 Thumbs.db
+
+# Additional build artifacts
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Test coverage
+coverage/
+*.lcov
+*.gcov
+*.gcda
+*.gcno
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Package manager files (npm alternatives)
+yarn.lock
+pnpm-lock.yaml
+
+# Tree-sitter CLI cache
+.tree-sitter/
