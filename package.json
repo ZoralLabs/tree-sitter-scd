@@ -27,11 +27,14 @@
         }
     },
     "scripts": {
-        "build": "tree-sitter build --wasm",
+        "build": "tree-sitter build",
+        "build-wasm": "tree-sitter build --wasm",
         "test": "tree-sitter test",
         "install": "node-gyp-build",
         "prebuildify": "prebuildify --napi --strip",
-        "playground": "tree-sitter playground"
+        "playground": "tree-sitter playground",
+        "highlight": "cat examples/sample.scd | tree-sitter highlight --query-paths queries/highlights.scm /dev/stdin",
+        "parse": "tree-sitter parse examples/sample.scd"
     },
     "files": [
         "grammar.js",
