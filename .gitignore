@@ -1,62 +1,40 @@
-logs/
-pids/
-build/
-prebuilds/
-node_modules/
-target/
-Cargo.lock
-
-*.log
-*.pid
 *.wasm
-*.a
-*.so
+*.lock
 *.dylib
+*.dll
+*.pc
+*.exp
+*.lib
+*.so
+*.so.*
+*.a
 *.o
 *.obj
+*.tmp
 *.tar.gz
 *.tgz
 *.zip
-*.so.*
+*.egg-info
+*.whl
 
-# Tree-sitter generated files
-src/parser.c
-src/tree_sitter/
-src/node-types.json
-src/grammar.json
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS files
 .DS_Store
-Thumbs.db
+.zed
+.envrc
 
-# Additional build artifacts
-*.dSYM/
-*.su
-*.idb
-*.pdb
+package-lock.json
+Package.resolved
 
-# Test coverage
-coverage/
-*.lcov
-*.gcov
-*.gcda
-*.gcno
+grammars/
+target/
+node_modules/
+build/
+prebuilds/
+target/
+dist/
+zig-cache/
+zig-out/
+_obj/
 
-# Temporary files
-*.tmp
-*.temp
-*~
-
-# Package manager files (npm alternatives)
-yarn.lock
-pnpm-lock.yaml
-
-# Tree-sitter CLI cache
-.tree-sitter/
+.build/
+.venv/
+.zig-cache/
