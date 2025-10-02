@@ -1,0 +1,62 @@
+{
+  "name": "tree-sitter-scd",
+  "version": "0.1.0",
+  "description": "SCD (Smart Contract Definition) grammar for tree-sitter",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "scd",
+    "smart-contract",
+    "yaml"
+  ],
+  "author": "Tree-sitter SCD Contributors",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "node-addon-api": "^7.0.0",
+    "node-gyp-build": "^4.6.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.20.4"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "tree-sitter build-wasm",
+    "test": "tree-sitter test",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "source.scd",
+      "file-types": [
+        "scd"
+      ]
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/tree-sitter-scd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/tree-sitter-scd/issues"
+  },
+  "homepage": "https://github.com/your-username/tree-sitter-scd#readme"
+}

@@ -1,0 +1,21 @@
+{
+    "version": "14",
+    "metadata": {
+        "name": "scd",
+        "display-name": "SCD",
+        "description": "Smart Contract Definition language",
+        "scope": "source.scd",
+        "file-types": ["scd"],
+        "injection-regex": "^scd$",
+        "version": "0.1.0"
+    },
+    "grammars": [
+        {
+            "name": "scd",
+            "path": ".",
+            "scope": "source.scd"
+        }
+    ],
+    "parser-directories": ["."],
+    "grammar-directories": ["."]
+}
