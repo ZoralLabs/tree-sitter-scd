@@ -291,3 +291,33 @@ date_field: date_time
       value: (scalar
         (plain_scalar
           (scd_type))))))
+
+================================================================================
+Document markers
+================================================================================
+
+---
+id: PL001
+type: product_contract
+...
+
+--------------------------------------------------------------------------------
+
+(document
+  (document_start)
+  (block_mapping
+    (block_mapping_pair
+      key: (scalar
+        (plain_scalar
+          (string)))
+      value: (scalar
+        (plain_scalar
+          (string))))
+    (block_mapping_pair
+      key: (scalar
+        (plain_scalar
+          (string)))
+      value: (scalar
+        (plain_scalar
+          (string)))))
+  (document_end))

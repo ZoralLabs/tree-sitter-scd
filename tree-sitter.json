@@ -7,7 +7,7 @@
         "scope": "source.scd",
         "file-types": ["scd"],
         "injection-regex": "^scd$",
-        "version": "0.1.0"
+        "version": "1.0.0"
     },
     "grammars": [
         {

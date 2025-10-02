@@ -1,13 +1,13 @@
 # Sample SCD (Smart Contract Definition) file
 # This demonstrates the key features of the SCD language
 
-id: PL001
+id: ABC123
 type: product_contract
 tier: 1
 name: Personal Loan
 category: personal_loan
-description: Personal loan with EMI installment method and periodic schedule type
-author: yurii.biurher@zorallabs.com
+description: Personal loan.
+author: Yurii Biurher
 org_unit: Head Office
 timezone: UTC
 
@@ -71,18 +71,3 @@ events:
         schedule: monthly
         inputs:
             payment_amount: calculated
-
-# Multi-line strings and complex values
-rules: |
-    Define business rules here
-    Multiple lines supported
-    Rules can be complex
-
-metadata:
-    version: "1.0.0"
-    created_date: "2024-01-15"
-    tags: ["loan", "personal", "emi"]
-    config:
-        enable_logging: true
-        max_retries: 3
-        timeout: 30

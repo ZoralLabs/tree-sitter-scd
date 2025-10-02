@@ -1,10 +1,10 @@
 [package]
 name = "tree-sitter-scd"
 description = "SCD (Smart Contract Definition) grammar for tree-sitter"
-version = "0.1.0"
-keywords = ["incremental", "parsing", "scd", "smart-contract", "yaml"]
+version = "1.0.0"
+keywords = ["tree-sitter", "scd", "smart-contract"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/your-username/tree-sitter-scd"
+repository = "https://github.com/ZoralLabs/tree-sitter-scd"
 edition = "2021"
 license = "Apache-2.0"
 

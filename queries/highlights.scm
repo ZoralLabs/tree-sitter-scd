@@ -37,13 +37,7 @@
 (alias "*" @punctuation.special)
 (alias_name) @label
 
-; Tags
-(tag) @tag
 
-; Directives
-(directive "%" @punctuation.special)
-(directive_name) @keyword.directive
-(directive_parameter) @string
 
 ; Punctuation
 ":" @punctuation.delimiter
@@ -56,10 +50,7 @@
 "[" @punctuation.bracket
 "]" @punctuation.bracket
 
-; Block scalar indicators
-"|" @punctuation.special
-">" @punctuation.special
-(block_scalar_header) @punctuation.special
+
 
 ; Known SCD section names
 ((identifier) @keyword.control

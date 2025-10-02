@@ -3,11 +3,11 @@
     {
       "target_name": "tree_sitter_scd_binding",
       "include_dirs": [
-        "<!(node -e \"console.log(require('node-addon-api').include)\")",
+        "<!@(node -p \"require('node-addon-api').include\")",
         "src"
       ],
       "dependencies": [
-        "<!(node -e \"console.log(require('node-addon-api').gyp)\")"
+        "<!@(node -p \"require('node-addon-api').gyp\")"
       ],
       "sources": [
         "bindings/node/binding.cc",

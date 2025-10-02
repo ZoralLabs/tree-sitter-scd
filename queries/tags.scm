@@ -40,8 +40,7 @@
           (#match? @name "^(trigger|source|schedule|inputs)$")) @definition.property))))
 
 ; Anchors
-(anchor
-  name: (anchor_name) @name) @definition.constant
+(anchor_name) @name @definition.constant
 
 ; Main SCD sections as references
 (block_mapping_pair
