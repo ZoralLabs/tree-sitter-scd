@@ -1,0 +1,69 @@
+==================
+Complex nested mapping with multiple levels
+==================
+
+a: "belongs to root"
+
+b:
+    c:
+        d: "belongs to c"
+        e: "belongs to c"
+    i:
+        k: "belongs to i"
+
+---
+
+(document
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (scalar
+      (quoted_string
+        (double_quoted_string
+          (double_quoted_content)))))
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (block_mapping
+      (INDENT)
+      (block_mapping_pair
+        key: (scalar
+          (plain_scalar
+            (string)))
+        value: (block_mapping
+          (INDENT)
+          (block_mapping_pair
+            key: (scalar
+              (plain_scalar
+                (string)))
+            value: (scalar
+              (quoted_string
+                (double_quoted_string
+                  (double_quoted_content)))))
+          (block_mapping_pair
+            key: (scalar
+              (plain_scalar
+                (string)))
+            value: (scalar
+              (quoted_string
+                (double_quoted_string
+                  (double_quoted_content)))))
+          (DEDENT)))
+      (block_mapping_pair
+        key: (scalar
+          (plain_scalar
+            (string)))
+        value: (block_mapping
+          (INDENT)
+          (block_mapping_pair
+            key: (scalar
+              (plain_scalar
+                (string)))
+            value: (scalar
+              (quoted_string
+                (double_quoted_string
+                  (double_quoted_content)))))
+          (DEDENT)))
+      (DEDENT))))

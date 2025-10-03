@@ -1,0 +1,22 @@
+add a test:
+
+a: "belongs to root"
+
+b: "belongs to root"
+    c:
+        d: "belongs to c"
+        e: "belongs to c"
+        f:
+            g: "belongs to f"
+            h: "belongs to f"
+
+    i:
+        k: "belongs to i"
+
+
+here we have a list of two keys a and b which belongs to same root element.
+a has string value.
+b is a map with keys c and i, both are maps.
+c has keys d, e, f.
+f has keys g and h.
+i has key k.
