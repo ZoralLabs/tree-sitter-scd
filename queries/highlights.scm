@@ -5,59 +5,64 @@
 (document_start) @punctuation.special
 (document_end) @punctuation.special
 
-; Anchors and aliases
-(anchor "&" @punctuation.special)
-(anchor_name) @label
-(alias "*" @punctuation.special)
-(alias_name) @label
-
 ; Punctuation
-":" @punctuation.delimiter
-"," @punctuation.delimiter
-"-" @punctuation.delimiter
+[":"
+ ","
+ "-"] @punctuation.delimiter
 
 ; Brackets
-"{" @punctuation.bracket
-"}" @punctuation.bracket
-"[" @punctuation.bracket
-"]" @punctuation.bracket
+["{"
+ "}"
+ "["
+ "]"] @punctuation.bracket
 
-; Identifiers (fallback for non-key identifiers like values)
-(identifier) @variable
+; Null as values in mappings or as elements in sequences
+(block_mapping_pair value: (scalar (plain_scalar (null) @constant.builtin.null)))
+(flow_mapping_pair value: (scalar (plain_scalar (null) @constant.builtin.null)))
+(flow_sequence_content (scalar (plain_scalar (null) @constant.builtin.null)))
+(block_sequence_item (scalar (plain_scalar (null) @constant.builtin.null)))
 
-; Basic scalar types
-(null) @constant.builtin
-(boolean) @constant.builtin.boolean
-(integer) @constant.numeric.integer
-(float) @constant.numeric.float
+; Booleans as values in mappings or as elements in sequences
+(block_mapping_pair value: (scalar (plain_scalar (boolean) @constant.builtin.boolean)))
+(flow_mapping_pair value: (scalar (plain_scalar (boolean) @constant.builtin.boolean)))
+(flow_sequence_content (scalar (plain_scalar (boolean) @constant.builtin.boolean)))
+(block_sequence_item (scalar (plain_scalar (boolean) @constant.builtin.boolean)))
+
+; Integers as values in mappings or as elements in sequences
+(block_mapping_pair value: (scalar (plain_scalar (integer) @number)))
+(flow_mapping_pair value: (scalar (plain_scalar (integer) @number)))
+(flow_sequence_content (scalar (plain_scalar (integer) @number)))
+(block_sequence_item (scalar (plain_scalar (integer) @number)))
+
+; Floats as values in mappings or as elements in sequences
+(block_mapping_pair value: (scalar (plain_scalar (float) @number)))
+(flow_mapping_pair value: (scalar (plain_scalar (float) @number)))
+(flow_sequence_content (scalar (plain_scalar (float) @number)))
+(block_sequence_item (scalar (plain_scalar (float) @number)))
+
+; SCD types as values in mappings or as elements in sequences
+(block_mapping_pair value: (scalar (plain_scalar (scd_type) @type.builtin)))
+(flow_mapping_pair value: (scalar (plain_scalar (scd_type) @type.builtin)))
+(flow_sequence_content (scalar (plain_scalar (scd_type) @type.builtin)))
+(block_sequence_item (scalar (plain_scalar (scd_type) @type.builtin)))
 
 ; Strings
-(double_quoted_string) @string
-(single_quoted_string) @string
-(double_quoted_content) @string
-(single_quoted_content) @string
-(string) @string
-(scd_type) @string
+(quoted_string) @string
 
 ; Escape sequences
-(escape_sequence) @constant.character.escape
+(escape_sequence) @string.special
 
 ; Generic keys in mappings
-(block_mapping_pair key: (identifier) @key)
-(flow_mapping_pair key: (identifier) @key)
+(block_mapping_pair key: (scalar) @property)
+(flow_mapping_pair key: (scalar) @property)
 
 ; Quoted keys in mappings
-(block_mapping_pair key: (quoted_string) @string.special)
-(flow_mapping_pair key: (quoted_string) @string.special)
+(block_mapping_pair key: (quoted_string) @string)
+(flow_mapping_pair key: (quoted_string) @string)
 
 ; Top-level SCD keywords in block mappings
 (document
   (block_mapping
     (block_mapping_pair
-      key: (scalar
-        (plain_scalar
-          (string) @property))
-      (#match? @property "^(id|type|name|category|description|schema|org_unit|author|timezone|parameters|snapshots|modules|events|balances|tier)$"))))
-
-; Error nodes for debugging
-(ERROR) @error
+      key: (scalar) @property.builtin
+        (#match? @property.builtin "^(id|type|name|category|description|schema|org_unit|author|timezone|parameters|snapshots|modules|events|balances|tier)$"))))

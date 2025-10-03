@@ -15,6 +15,8 @@ timezone: UTC
 x2: true
 x3: "string value"
 x4: string value
+x5: null
+true: 123
 
 parameters:
     # Core parameters
