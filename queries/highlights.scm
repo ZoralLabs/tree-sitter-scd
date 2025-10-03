@@ -59,7 +59,7 @@
 ((string) @module (#match? @module "^[a-zA-Z0-9_\\-.]+\\.scl$"))
 
 ; Escape sequences
-(escape_sequence) @string.special
+(escape_sequence) @string.escape
 
 ; Generic keys in mappings
 (block_mapping_pair key: (scalar) @property)
