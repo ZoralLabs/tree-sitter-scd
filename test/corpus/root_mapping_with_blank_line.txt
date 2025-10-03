@@ -1,0 +1,53 @@
+==================
+Root mapping with nested values and blank line
+==================
+
+b: "belongs to root"
+c:
+    d: "belongs to c"
+    e: "belongs to c"
+
+f: "belongs to root"
+
+---
+
+(document
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (scalar
+      (quoted_string
+        (double_quoted_string
+          (double_quoted_content)))))
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (block_mapping
+      (INDENT)
+      (block_mapping_pair
+        key: (scalar
+          (plain_scalar
+            (string)))
+        value: (scalar
+          (quoted_string
+            (double_quoted_string
+              (double_quoted_content)))))
+      (block_mapping_pair
+        key: (scalar
+          (plain_scalar
+            (string)))
+        value: (scalar
+          (quoted_string
+            (double_quoted_string
+              (double_quoted_content)))))
+      (DEDENT)))
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (scalar
+      (quoted_string
+        (double_quoted_string
+          (double_quoted_content))))))

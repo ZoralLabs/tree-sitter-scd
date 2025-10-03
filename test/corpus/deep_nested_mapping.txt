@@ -1,0 +1,70 @@
+==================
+Deep nested mapping with three levels
+==================
+
+b: "belongs to root"
+c:
+    d: "belongs to c"
+    e:
+        k1: "belongs to e"
+        k2: "belongs to e"
+
+f: "belongs to root"
+
+---
+
+(document
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (scalar
+      (quoted_string
+        (double_quoted_string
+          (double_quoted_content)))))
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (block_mapping
+      (INDENT)
+      (block_mapping_pair
+        key: (scalar
+          (plain_scalar
+            (string)))
+        value: (scalar
+          (quoted_string
+            (double_quoted_string
+              (double_quoted_content)))))
+      (block_mapping_pair
+        key: (scalar
+          (plain_scalar
+            (string)))
+        value: (block_mapping
+          (INDENT)
+          (block_mapping_pair
+            key: (scalar
+              (plain_scalar
+                (string)))
+            value: (scalar
+              (quoted_string
+                (double_quoted_string
+                  (double_quoted_content)))))
+          (block_mapping_pair
+            key: (scalar
+              (plain_scalar
+                (string)))
+            value: (scalar
+              (quoted_string
+                (double_quoted_string
+                  (double_quoted_content)))))
+          (DEDENT)))
+      (DEDENT)))
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (scalar
+      (quoted_string
+        (double_quoted_string
+          (double_quoted_content))))))
