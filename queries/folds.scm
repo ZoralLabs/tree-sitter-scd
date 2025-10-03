@@ -24,6 +24,10 @@
       value: (block_mapping) @fold))
  (#eq? @events_key "events"))
 
+; Fold regions between INDENT and DEDENT tokens
+((INDENT) @fold.start
+ (DEDENT) @fold.end)
+
 ; Quoted strings that span multiple lines
 (double_quoted_string) @fold
 (single_quoted_string) @fold

@@ -76,6 +76,14 @@
       "required": true,
       "types": [
         {
+          "type": "DEDENT",
+          "named": true
+        },
+        {
+          "type": "INDENT",
+          "named": true
+        },
+        {
           "type": "block_mapping_pair",
           "named": true
         }
@@ -149,6 +157,14 @@
       "required": true,
       "types": [
         {
+          "type": "DEDENT",
+          "named": true
+        },
+        {
+          "type": "INDENT",
+          "named": true
+        },
+        {
           "type": "block_sequence_item",
           "named": true
         }
@@ -217,11 +233,11 @@
           "named": true
         },
         {
-          "type": "block_mapping",
+          "type": "block_mapping_pair",
           "named": true
         },
         {
-          "type": "block_sequence",
+          "type": "block_sequence_item",
           "named": true
         },
         {
@@ -230,14 +246,6 @@
         },
         {
           "type": "document_start",
-          "named": true
-        },
-        {
-          "type": "flow_mapping",
-          "named": true
-        },
-        {
-          "type": "flow_sequence",
           "named": true
         },
         {
@@ -558,12 +566,20 @@
     "named": false
   },
   {
+    "type": "DEDENT",
+    "named": true
+  },
+  {
     "type": "FALSE",
     "named": false
   },
   {
     "type": "False",
     "named": false
+  },
+  {
+    "type": "INDENT",
+    "named": true
   },
   {
     "type": "NO",

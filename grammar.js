@@ -1,13 +1,17 @@
 module.exports = grammar({
     name: "scd",
 
-    extras: ($) => [/\s/, $.comment],
+    // Remove \n from extras - newlines should be meaningful tokens
+    extras: ($) => [/[ \t\f]/, $.comment],
 
-    conflicts: ($) => [[$.scalar, $._key], [$.block_mapping_pair], [$.anchor]],
+    // External tokens for indentation handling
+    externals: ($) => [$.INDENT, $.DEDENT, $._NEWLINE],
+
+    conflicts: ($) => [[$.scalar, $._key], [$.anchor]],
 
     rules: {
         // Entry point
-        document: ($) => seq(optional($.document_start), optional($._value), optional($.document_end)),
+        document: ($) => repeat(choice($.block_mapping_pair, $.block_sequence_item, $.scalar, $.alias, $.anchor, $.document_start, $.document_end, $._NEWLINE)),
 
         document_start: ($) => "---",
         document_end: ($) => "...",
@@ -18,13 +22,31 @@ module.exports = grammar({
         // Main value types
         _value: ($) => choice($.block_mapping, $.flow_mapping, $.block_sequence, $.flow_sequence, $.scalar, $.alias, $.anchor),
 
-        // Block mapping
-        block_mapping: ($) => prec.left(repeat1($.block_mapping_pair)),
-        block_mapping_pair: ($) => seq(field("key", $._key), ":", optional(field("value", $._value))),
+        // Block mapping - handle newlines properly
+        block_mapping: ($) => seq($.INDENT, repeat1(seq($.block_mapping_pair, optional($._NEWLINE))), $.DEDENT),
+
+        // Block mapping pair - handle block values after colon
+        block_mapping_pair: ($) =>
+            prec.right(
+                seq(
+                    field("key", $._key),
+                    ":",
+                    choice(
+                        // Inline value (same line) with optional trailing newline
+                        seq(field("value", $._value), optional($._NEWLINE)),
+                        // Block value (newline then indented content)
+                        seq($._NEWLINE, field("value", $._value)),
+                        // Empty (just colon)
+                        $._NEWLINE,
+                    ),
+                ),
+            ),
+
         _key: ($) => choice($.identifier, $.quoted_string, $.scalar),
 
-        // Block sequence
-        block_sequence: ($) => prec.left(repeat1($.block_sequence_item)),
+        // Block sequence - handle newlines properly
+        block_sequence: ($) => seq($.INDENT, repeat1(seq($.block_sequence_item, optional($._NEWLINE))), $.DEDENT),
+
         block_sequence_item: ($) => prec.right(seq("-", optional($._value))),
 
         // Flow mapping

@@ -1,0 +1,33 @@
+==================
+Root map with mixed values
+==================
+
+l1k1: 10
+l1k2: true
+l1k3: "this is string"
+
+---
+
+(document
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (scalar
+      (plain_scalar
+        (integer))))
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (scalar
+      (plain_scalar
+        (boolean))))
+  (block_mapping_pair
+    key: (scalar
+      (plain_scalar
+        (string)))
+    value: (scalar
+      (quoted_string
+        (double_quoted_string
+          (double_quoted_content))))))
