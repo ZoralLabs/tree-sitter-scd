@@ -55,6 +55,9 @@
 ; Strings
 (quoted_string) @string
 
+; SCL scripts
+((string) @module (#match? @module "^[a-zA-Z0-9_\\-.]+\\.scl$"))
+
 ; Escape sequences
 (escape_sequence) @string.special
 
