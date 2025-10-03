@@ -46,6 +46,12 @@
 (flow_sequence_content (scalar (plain_scalar (scd_type) @type.builtin)))
 (block_sequence_item (scalar (plain_scalar (scd_type) @type.builtin)))
 
+; SCD keywords as values in mappings or as elements in sequences
+(block_mapping_pair value: (scalar (plain_scalar (scd_keyword) @type.builtin)))
+(flow_mapping_pair value: (scalar (plain_scalar (scd_keyword) @type.builtin)))
+(flow_sequence_content (scalar (plain_scalar (scd_keyword) @type.builtin)))
+(block_sequence_item (scalar (plain_scalar (scd_keyword) @type.builtin)))
+
 ; Strings
 (quoted_string) @string
 

@@ -448,6 +448,10 @@
           "named": true
         },
         {
+          "type": "scd_keyword",
+          "named": true
+        },
+        {
           "type": "scd_type",
           "named": true
         },
@@ -495,6 +499,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "scd_keyword",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "scd_type",
@@ -613,7 +622,43 @@
     "named": false
   },
   {
+    "type": "accnum",
+    "named": false
+  },
+  {
+    "type": "account_category",
+    "named": false
+  },
+  {
+    "type": "account_number",
+    "named": false
+  },
+  {
+    "type": "account_type",
+    "named": false
+  },
+  {
+    "type": "activation",
+    "named": false
+  },
+  {
+    "type": "avg",
+    "named": false
+  },
+  {
+    "type": "balance",
+    "named": false
+  },
+  {
     "type": "balance_id",
+    "named": false
+  },
+  {
+    "type": "bid",
+    "named": false
+  },
+  {
+    "type": "bool",
     "named": false
   },
   {
@@ -626,7 +671,19 @@
     "extra": true
   },
   {
+    "type": "context",
+    "named": false
+  },
+  {
+    "type": "count",
+    "named": false
+  },
+  {
     "type": "currency",
+    "named": false
+  },
+  {
+    "type": "custom",
     "named": false
   },
   {
@@ -639,6 +696,14 @@
   },
   {
     "type": "datetime",
+    "named": false
+  },
+  {
+    "type": "deactivation",
+    "named": false
+  },
+  {
+    "type": "dec",
     "named": false
   },
   {
@@ -658,6 +723,10 @@
     "named": true
   },
   {
+    "type": "effective_time",
+    "named": false
+  },
+  {
     "type": "enum",
     "named": false
   },
@@ -666,12 +735,20 @@
     "named": true
   },
   {
+    "type": "et",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "int",
+    "named": false
   },
   {
     "type": "integer",
@@ -683,6 +760,18 @@
   },
   {
     "type": "ledger",
+    "named": false
+  },
+  {
+    "type": "max",
+    "named": false
+  },
+  {
+    "type": "migration",
+    "named": false
+  },
+  {
+    "type": "min",
     "named": false
   },
   {
@@ -702,7 +791,59 @@
     "named": false
   },
   {
+    "type": "op_context",
+    "named": false
+  },
+  {
+    "type": "param",
+    "named": false
+  },
+  {
+    "type": "param_balance",
+    "named": false
+  },
+  {
+    "type": "parameter",
+    "named": false
+  },
+  {
+    "type": "parameter_balance",
+    "named": false
+  },
+  {
+    "type": "pb",
+    "named": false
+  },
+  {
+    "type": "posting",
+    "named": false
+  },
+  {
     "type": "posting_type",
+    "named": false
+  },
+  {
+    "type": "postings",
+    "named": false
+  },
+  {
+    "type": "product_category",
+    "named": false
+  },
+  {
+    "type": "product_code",
+    "named": false
+  },
+  {
+    "type": "product_contract",
+    "named": false
+  },
+  {
+    "type": "reverse_transaction",
+    "named": false
+  },
+  {
+    "type": "scheduled",
     "named": false
   },
   {
@@ -710,15 +851,51 @@
     "named": true
   },
   {
-    "type": "string",
-    "named": true
+    "type": "snapshot",
+    "named": false
+  },
+  {
+    "type": "snapshot_type",
+    "named": false
+  },
+  {
+    "type": "str",
+    "named": false
   },
   {
     "type": "string",
     "named": false
   },
   {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "sum",
+    "named": false
+  },
+  {
     "type": "tiered_rate",
+    "named": false
+  },
+  {
+    "type": "time_zone",
+    "named": false
+  },
+  {
+    "type": "timezone",
+    "named": false
+  },
+  {
+    "type": "transaction",
+    "named": false
+  },
+  {
+    "type": "transaction_contract",
+    "named": false
+  },
+  {
+    "type": "transaction_deps",
     "named": false
   },
   {
@@ -727,6 +904,22 @@
   },
   {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "tx_deps",
+    "named": false
+  },
+  {
+    "type": "txn_deps",
+    "named": false
+  },
+  {
+    "type": "uid",
+    "named": false
+  },
+  {
+    "type": "value_time",
     "named": false
   },
   {

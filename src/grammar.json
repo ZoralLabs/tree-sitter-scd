@@ -463,6 +463,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "scd_keyword"
+        },
+        {
+          "type": "SYMBOL",
           "name": "string"
         }
       ]
@@ -472,19 +476,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "decimal"
+          "value": "boolean"
         },
         {
           "type": "STRING",
-          "value": "ledger"
-        },
-        {
-          "type": "STRING",
-          "value": "currency"
-        },
-        {
-          "type": "STRING",
-          "value": "date_time"
+          "value": "bool"
         },
         {
           "type": "STRING",
@@ -492,35 +488,7 @@
         },
         {
           "type": "STRING",
-          "value": "transaction_type"
-        },
-        {
-          "type": "STRING",
-          "value": "posting_type"
-        },
-        {
-          "type": "STRING",
-          "value": "balance_id"
-        },
-        {
-          "type": "STRING",
-          "value": "dated_rate"
-        },
-        {
-          "type": "STRING",
-          "value": "enum"
-        },
-        {
-          "type": "STRING",
-          "value": "datetime"
-        },
-        {
-          "type": "STRING",
-          "value": "tiered_rate"
-        },
-        {
-          "type": "STRING",
-          "value": "json"
+          "value": "int"
         },
         {
           "type": "STRING",
@@ -528,7 +496,236 @@
         },
         {
           "type": "STRING",
-          "value": "boolean"
+          "value": "str"
+        },
+        {
+          "type": "STRING",
+          "value": "decimal"
+        },
+        {
+          "type": "STRING",
+          "value": "dec"
+        },
+        {
+          "type": "STRING",
+          "value": "currency"
+        },
+        {
+          "type": "STRING",
+          "value": "time_zone"
+        },
+        {
+          "type": "STRING",
+          "value": "timezone"
+        },
+        {
+          "type": "STRING",
+          "value": "ledger"
+        },
+        {
+          "type": "STRING",
+          "value": "tiered_rate"
+        },
+        {
+          "type": "STRING",
+          "value": "balance_id"
+        },
+        {
+          "type": "STRING",
+          "value": "snapshot_type"
+        },
+        {
+          "type": "STRING",
+          "value": "posting_type"
+        },
+        {
+          "type": "STRING",
+          "value": "uid"
+        },
+        {
+          "type": "STRING",
+          "value": "date_time"
+        },
+        {
+          "type": "STRING",
+          "value": "datetime"
+        },
+        {
+          "type": "STRING",
+          "value": "json"
+        },
+        {
+          "type": "STRING",
+          "value": "enum"
+        },
+        {
+          "type": "STRING",
+          "value": "transaction_type"
+        },
+        {
+          "type": "STRING",
+          "value": "dated_rate"
+        }
+      ]
+    },
+    "scd_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "product_contract"
+        },
+        {
+          "type": "STRING",
+          "value": "transaction_contract"
+        },
+        {
+          "type": "STRING",
+          "value": "scheduled"
+        },
+        {
+          "type": "STRING",
+          "value": "posting"
+        },
+        {
+          "type": "STRING",
+          "value": "activation"
+        },
+        {
+          "type": "STRING",
+          "value": "deactivation"
+        },
+        {
+          "type": "STRING",
+          "value": "migration"
+        },
+        {
+          "type": "STRING",
+          "value": "custom"
+        },
+        {
+          "type": "STRING",
+          "value": "transaction"
+        },
+        {
+          "type": "STRING",
+          "value": "reverse_transaction"
+        },
+        {
+          "type": "STRING",
+          "value": "parameter"
+        },
+        {
+          "type": "STRING",
+          "value": "param"
+        },
+        {
+          "type": "STRING",
+          "value": "parameter_balance"
+        },
+        {
+          "type": "STRING",
+          "value": "param_balance"
+        },
+        {
+          "type": "STRING",
+          "value": "pb"
+        },
+        {
+          "type": "STRING",
+          "value": "balance"
+        },
+        {
+          "type": "STRING",
+          "value": "bid"
+        },
+        {
+          "type": "STRING",
+          "value": "snapshot"
+        },
+        {
+          "type": "STRING",
+          "value": "effective_time"
+        },
+        {
+          "type": "STRING",
+          "value": "value_time"
+        },
+        {
+          "type": "STRING",
+          "value": "et"
+        },
+        {
+          "type": "STRING",
+          "value": "transaction"
+        },
+        {
+          "type": "STRING",
+          "value": "postings"
+        },
+        {
+          "type": "STRING",
+          "value": "account_type"
+        },
+        {
+          "type": "STRING",
+          "value": "product_code"
+        },
+        {
+          "type": "STRING",
+          "value": "account_category"
+        },
+        {
+          "type": "STRING",
+          "value": "product_category"
+        },
+        {
+          "type": "STRING",
+          "value": "account_number"
+        },
+        {
+          "type": "STRING",
+          "value": "accnum"
+        },
+        {
+          "type": "STRING",
+          "value": "transaction_deps"
+        },
+        {
+          "type": "STRING",
+          "value": "txn_deps"
+        },
+        {
+          "type": "STRING",
+          "value": "tx_deps"
+        },
+        {
+          "type": "STRING",
+          "value": "op_context"
+        },
+        {
+          "type": "STRING",
+          "value": "context"
+        },
+        {
+          "type": "STRING",
+          "value": "avg"
+        },
+        {
+          "type": "STRING",
+          "value": "min"
+        },
+        {
+          "type": "STRING",
+          "value": "max"
+        },
+        {
+          "type": "STRING",
+          "value": "sum"
+        },
+        {
+          "type": "STRING",
+          "value": "count"
         }
       ]
     },
